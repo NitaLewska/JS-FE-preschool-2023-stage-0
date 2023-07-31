@@ -212,12 +212,145 @@ main {
 
 }
 
+/* FAVORITES */
+
+.favorites {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.favorites h2 {
+    flex-basis: 100%;
+}
+
+.favorites form {
+    flex-basis: 100%;
+    color: #000;
+    text-align: left;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: -40px;
+}
+
+.favorites form p{
+    margin-bottom: 40px;
+}
+
+.favorites form label {
+    font-weight: 400;
+    margin-right: 90px;
+    padding-left: 20px;
+}
+
+.favorites_card {
+    width: 550px;
+    height: 555px;
+    border: 1px solid #000;
+    background: #FFF;
+    position: relative;
+    padding: 15px 20px;
+    margin-right: 40px;
+}
+
+.favorites_card__stuff {
+    color: #000;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    /* 200% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.favorites_card__stuff::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background: #BB945F;
+    bottom: 0;
+    left: 0;
+}
+
+.favorites_card__title {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    /* 266.667% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.favorites_card__author {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    /* 266.667% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.favorites_card__description {
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    /* 266.667% */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    width: 355px;
+}
+
+.favorites_card img {
+    position: absolute;
+    right: -40px;
+    bottom: -1px;
+}
+
+.favorites_card button {
+    width: 75px;
+    height: 30px;
+    color: #0C0C0E;
+    border: 1px solid #000;
+    background: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    background-color: #FFF;
+    position: absolute;
+    bottom: 15px;
+}
+
 /* COFFEE SHOP */
 
 .coffee_shop {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     width: auto;
 }
@@ -334,18 +467,18 @@ main {
 .contacts a {
     display: inline-block;
     text-decoration: none;
-    color:inherit;
+    color: inherit;
     transition: 200ms;
 }
 
-.contacts a:hover{
+.contacts a:hover {
     text-shadow: 0px 0px 0px #000000;
     transform: translateY(-2px);
 }
 
 /* FOOTER */
 
-footer{
+footer {
     display: flex;
     justify-content: center;
     background-color: #0C0C0E;
@@ -361,19 +494,20 @@ footer .container {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.sub_footer p{
+.sub_footer p {
     justify-self: left;
 }
 
-.sub_footer a:first-of-type{
+.sub_footer a:first-of-type {
     justify-self: center;
 }
 
-.sub_footer a:nth-of-type(2){
+.sub_footer a:nth-of-type(2) {
     justify-self: right;
 }
 
-.sub_footer p, .sub_footer a{
+.sub_footer p,
+.sub_footer a {
     text-decoration: none;
     color: #FFF;
     text-align: center;
@@ -381,6 +515,14 @@ footer .container {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px; /* 100% */
+    line-height: 20px;
+    /* 100% */
     letter-spacing: 2px;
+}
+
+.oops {
+    font-size: 32px;
+    margin-block:20px;
+    text-align: center;
+    margin-inline: auto;
 }

@@ -16,6 +16,9 @@
 </head>
 
 <body>
+    <div class="container oops">
+        <p>Извините, чуточку недоделала, если можно, проверьте 1.08 после обеда!</p>
+    </div>
     <header>
         <div class="container">
             <nav>
@@ -55,13 +58,62 @@
             </section>
             <section class="favorites" id="favorites">
                 <h2>Favorites</h2>
-                <article>
-                    <p></p>
-                    <h3></h3>
-                    <p></p>
-                    <p></p>
-                    <button></button>
-                    <img src="" alt="">
+                <form action="">
+                    <p>Pick favorites of season</p>
+                    <input type="radio" id="season1" name="season" value="winter">
+                    <label for="season1">Winter</label>
+
+                    <input type="radio" id="season2" name="season" value="spring">
+                    <label for="season2">Spring</label>
+
+                    <input type="radio" id="season3" name="season" value="summer">
+                    <label for="season3">Summer</label>
+
+                    <input type="radio" id="season4" name="season" value="autumn">
+                    <label for="season4">Autumn</label>
+                </form>
+                <article class="favorites_card">
+                    <p class="favorites_card__stuff">Staff Picks</p>
+                    <h3 class="favorites_card__title">The Book Eaters</h3>
+                    <p class="favorites_card__author">By Sunyi Dean</p>
+                    <p class="favorites_card__description">An unusual sci-fi story about a book eater woman who tries
+                        desperately to save her dangerous mind-eater son from tradition and certain death. Complete with
+                        dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for
+                        the faint of heart.</p>
+                    <button>Buy</button>
+                    <img src="img/cover_book_eaters.png" alt="">
+                </article>
+                <article class="favorites_card">
+                    <p class="favorites_card__stuff">Staff Picks</p>
+                    <h3 class="favorites_card__title">Cackle
+                    </h3>
+                    <p class="favorites_card__author">By Rachel Harrison</p>
+                    <p class="favorites_card__description">Are your Halloween movies of choice The Witches of Eastwick
+                        and Practical Magic? Look no further than here - where a woman recovering from a breakup moves
+                        to a quaint town in upstate New York and befriends a beautiful witch.</p>
+                    <button>Buy</button>
+                    <img src="img/cover_cackle.png" alt="">
+                </article>
+                <article class="favorites_card">
+                    <p class="favorites_card__stuff">Staff Picks</p>
+                    <h3 class="favorites_card__title">Dante: Poet of the Secular World</h3>
+                    <p class="favorites_card__author">By Erich Auerbach</p>
+                    <p class="favorites_card__description">Auerbach's engaging book places the 'Comedy' within the
+                        tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who
+                        raised the individual and his drama of soul into something of divine significance—an inspired
+                        introduction to Dante's main themes.</p>
+                    <button>Buy</button>
+                    <img src="img/cover_dante.png" alt="">
+                </article>
+                <article class="favorites_card">
+                    <p class="favorites_card__stuff">Staff Picks</p>
+                    <h3 class="favorites_card__title">The Last Queen</h3>
+                    <p class="favorites_card__author">By Clive Irving</p>
+                    <p class="favorites_card__description">A timely and revelatory new biography of Queen Elizabeth (and
+                        her family) exploring how the Windsors have evolved and thrived as the modern world has changed
+                        around them.</p>
+                    <button>Buy</button>
+                    <img src="img/cover_last queen.png" alt="">
                 </article>
             </section>
             <section class="coffee_shop" id="coffee_shop">
