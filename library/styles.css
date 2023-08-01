@@ -343,6 +343,14 @@ main {
     background-color: #FFF;
     position: absolute;
     bottom: 15px;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.favorites_card button:hover{
+    border-radius: 2px;
+    border: 1px solid #BB945F;
+    background: #BB945F;
 }
 
 /* COFFEE SHOP */
