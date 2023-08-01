@@ -488,10 +488,37 @@ footer .container {
     padding: 20px;
 }
 
+.main_footer{
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    padding-bottom: 30px;
+    border-bottom: #FFF 1px solid;
+    grid-template-columns: 1fr 1fr;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 133.333% */
+    text-align: right;
+}
+
+.main_footer>p:first-of-type{
+    text-align: left;
+}
+
+.main_footer__icons{
+    display: flex;
+    gap: 15px;
+    align-items: center ;
+}
+
 .sub_footer {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin-block: 44px;
 }
 
 .sub_footer p {
