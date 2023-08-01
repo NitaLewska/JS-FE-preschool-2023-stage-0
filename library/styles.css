@@ -198,12 +198,11 @@ main {
 .about_gallery__controls {
     display: flex;
     justify-content: center;
-    gap: 10px;
     margin-top: 40px;
 }
 
 .about_gallery__controls button {
-    height: 28px;
+    height: 26px;
     aspect-ratio: 1;
     border-radius: 50%;
     border: 6px solid white;
