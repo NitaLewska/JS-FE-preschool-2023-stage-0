@@ -243,10 +243,14 @@ main {
     margin-bottom: 40px;
 }
 
+.favorites form input{
+    padding: 6px;
+}
+
 .favorites form label {
     font-weight: 400;
     margin-right: 90px;
-    padding-left: 20px;
+    padding-left: 17px;
 }
 
 .favorites_card {
@@ -351,6 +355,20 @@ main {
     border-radius: 2px;
     border: 1px solid #BB945F;
     background: #BB945F;
+}
+
+.favorites_card button:disabled,
+.favorites_card button[disabled] {
+    color:#BB945F;
+    border: 1px solid #BB945F;
+    cursor: default;
+}
+
+.favorites_card button:disabled:hover,
+.favorites_card button[disabled]:hover{
+    border-radius: unset;
+    border: 1px solid #BB945F;
+    background: unset;
 }
 
 /* COFFEE SHOP */
