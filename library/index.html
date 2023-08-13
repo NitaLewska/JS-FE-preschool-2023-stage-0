@@ -15,6 +15,7 @@
     <link rel="manifest" href="favicon/site.webmanifest">
     <script src="scripts.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -56,23 +57,18 @@
                     <button></button>
                     <button></button>
                     <button></button>
+                    <button></button>
+                    <button></button>
                 </div>
             </section>
             <section class="favorites" id="favorites">
                 <h2>Favorites</h2>
                 <form action="/">
                     <p>Pick favorites of season</p>
-                    <input type="radio" id="season1" name="season" value="winter">
-                    <label for="season1">Winter</label>
-
-                    <input type="radio" id="season2" name="season" value="spring">
-                    <label for="season2">Spring</label>
-
-                    <input type="radio" id="season3" name="season" value="summer">
-                    <label for="season3">Summer</label>
-
-                    <input type="radio" id="season4" name="season" value="autumn">
-                    <label for="season4">Autumn</label>
+                    <label for="season1" checked><input type="radio" id="season1" name="season" value="winter" checked>Winter</label>
+                    <label for="season2"><input type="radio" id="season2" name="season" value="spring">Spring</label>
+                    <label for="season3"><input type="radio" id="season3" name="season" value="summer">Summer</label>
+                    <label for="season4"><input type="radio" id="season4" name="season" value="autumn">Autumn</label>
                 </form>
                 <article class="favorites_card">
                     <p class="favorites_card__stuff">Staff Picks</p>
@@ -104,7 +100,7 @@
                         tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who
                         raised the individual and his drama of soul into something of divine significance—an inspired
                         introduction to Dante's main themes.</p>
-                    <button>Own</button>
+                    <button>Buy</button>
                     <img src="img/cover_dante.png" alt="">
                 </article>
                 <article class="favorites_card">
@@ -120,10 +116,8 @@
             </section>
             <section class="coffee_shop" id="coffee_shop">
                 <h2>Coffee shop</h2>
-                <p>In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and
-                    friendly conversation.
-                    you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also
-                    you can try desserts from bakery.</p>
+                <p>In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation.
+                    you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.</p>
                 <article>
                     <h3>Coffee & Tea</h3>
                     <p>Cold Brew Coffee<span>$3</span></p>
