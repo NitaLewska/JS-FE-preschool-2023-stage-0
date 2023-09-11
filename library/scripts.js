@@ -52,3 +52,4 @@ console.log("Никак не сделаю сецию LibraryCard, в About не 
 //     if (event._isClickWithInMenu) return;
 //     document.querySelector(".header-links").classList.remove("open")
 // });
+
