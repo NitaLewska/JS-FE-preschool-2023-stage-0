@@ -64,7 +64,7 @@ main {
     background: rgba(255, 255, 255, 0.479);
     outline: none;
     border-radius: 30px;
-    margin-top: 0.3rem;
+    margin-block: 0.2rem;
 }
 
 .audio_player__progress_bar::-webkit-slider-thumb {

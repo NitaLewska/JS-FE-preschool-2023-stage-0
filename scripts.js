@@ -14,21 +14,26 @@ const tracks = [
 ]
 
 let currentTrack = 0;
+let playing = false
 
 let trackName = document.querySelector("p.audio_player__track_name")
 let bandName = document.querySelector("p.audio_player__band_name")
 let albumCover = document.querySelector("img.audio_player__album_cover")
 let audio = document.querySelector(".audio_player__audio")
+let fullTime = document.querySelector('p.audio_player__full_time')
+let currentTime = document.querySelector('p.audio_player__current_time')
 
 function refreshPlayer() {
     trackName.innerHTML = tracks[currentTrack].trackName;
     bandName.innerHTML = tracks[currentTrack].bandName;
     audio.src = tracks[currentTrack].trackPath;
     albumCover.src = tracks[currentTrack].cover
+    audio.onloadedmetadata = function() {
+        fullTime.innerHTML = `${Math.floor(audio.duration/60)}:${Math.floor(audio.duration%60)}`
+      };
+
 }
 refreshPlayer()
-
-let playing = false
 
 function playAudio() {
     audio.play();
@@ -67,13 +72,10 @@ function previousTrack() {
 }
 
 let playButton = document.querySelector(".audio_player__play")
-
 playButton.addEventListener('click', togglePlay)
 
 let nextButton = document.querySelector(".audio_player__next")
-
 nextButton.addEventListener('click', nextTrack)
 
 let previousButton = document.querySelector(".audio_player__previous")
-
 previousButton.addEventListener('click', previousTrack)
