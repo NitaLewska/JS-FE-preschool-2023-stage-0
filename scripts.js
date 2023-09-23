@@ -35,10 +35,10 @@ function refreshPlayer() {
     bandName.innerHTML = tracks[currentTrack].bandName;
     audio.src = tracks[currentTrack].trackPath;
     albumCover.src = tracks[currentTrack].cover
-    audio.onloadedmetadata = function() {
+    audio.onloadedmetadata = function () {
         fullTime.innerHTML = secondsToClock(audio.duration)
         progressBar.max = audio.duration
-      };
+    };
 }
 
 refreshPlayer()
@@ -85,19 +85,20 @@ function previousTrack() {
 }
 
 function secondsToClock(time) {
-    let minutes = ""+Math.floor(time/60)
-    let seconds = ""+Math.floor(time%60)
-
+    let minutes = "" + Math.floor(time / 60)
+    let seconds = "" + Math.floor(time % 60)
     seconds = seconds.length < 2 ? '0' + seconds : seconds
-
     return `${minutes}:${seconds}`
 }
 
 let progressBar = document.querySelector('.audio_player__progress_bar')
 
 function refreshTime() {
-    currentTime.innerHTML = secondsToClock(audio.played.end(0))
-    progressBar.value = audio.played.end(0) ? audio.played.end(0) : 0
+    currentTime.innerHTML = secondsToClock(audio.currentTime)
+    progressBar.value = audio.currentTime
+    if (audio.currentTime === audio.duration) {
+        nextTrack()
+    }
 }
 
 let playButton = document.querySelector(".audio_player__play")
@@ -110,6 +111,16 @@ let previousButton = document.querySelector(".audio_player__previous")
 previousButton.addEventListener('click', previousTrack)
 
 let volume = document.querySelector("input.audio_player__volume");
-volume.addEventListener("input", function(e) {
-audio.volume = e.currentTarget.value / 100;
+volume.addEventListener("input", function (e) {
+    audio.volume = e.currentTarget.value / 100;
 })
+
+function changeProgressBar() {
+    audio.currentTime = progressBar.value;
+}
+
+progressBar.addEventListener("input", changeProgressBar);
+
+console.log(
+    "Самооценка: 60/60", "Дополнительный функционал - после окончания трека автоматически включается следующий, добавлен ползунок громкости"
+)
