@@ -36,7 +36,7 @@ function refreshPlayer() {
     audio.src = tracks[currentTrack].trackPath;
     albumCover.src = tracks[currentTrack].cover
     audio.onloadedmetadata = function() {
-        fullTime.innerHTML = `${Math.floor(audio.duration/60)}:${Math.floor(audio.duration%60)}`
+        fullTime.innerHTML = secondsToClock(audio.duration)
         progressBar.max = audio.duration
       };
 }
@@ -84,10 +84,19 @@ function previousTrack() {
     }
 }
 
+function secondsToClock(time) {
+    let minutes = ""+Math.floor(time/60)
+    let seconds = ""+Math.floor(time%60)
+
+    seconds = seconds.length < 2 ? '0' + seconds : seconds
+
+    return `${minutes}:${seconds}`
+}
+
 let progressBar = document.querySelector('.audio_player__progress_bar')
 
 function refreshTime() {
-    currentTime.innerHTML = `${Math.floor(audio.played.end(0)/60)}:${Math.floor(audio.played.end(0)%60)}`
+    currentTime.innerHTML = secondsToClock(audio.played.end(0))
     progressBar.value = audio.played.end(0) ? audio.played.end(0) : 0
 }
 
@@ -99,3 +108,8 @@ nextButton.addEventListener('click', nextTrack)
 
 let previousButton = document.querySelector(".audio_player__previous")
 previousButton.addEventListener('click', previousTrack)
+
+let volume = document.querySelector("input.audio_player__volume");
+volume.addEventListener("input", function(e) {
+audio.volume = e.currentTarget.value / 100;
+})
