@@ -10,6 +10,12 @@ const tracks = [
         bandName: "Blackbriar",
         cover: "src/covers/blackbriar_the_cause_of_shipwreck.jfif",
         trackPath: "src/tracks/Blackbriar - Lilith Be Gone.mp3"
+    },
+    {
+        trackName: "Cyberpunk 2077",
+        bandName: "Vinnie Dixie",
+        cover: "src/covers/cyberpunk.jfif",
+        trackPath: "src/tracks/Vinnie Dixie - Cyberpunk 2077.mp3"
     }
 ]
 
@@ -33,18 +39,19 @@ function refreshPlayer() {
         fullTime.innerHTML = `${Math.floor(audio.duration/60)}:${Math.floor(audio.duration%60)}`
         progressBar.max = audio.duration
       };
-
 }
 
 refreshPlayer()
 
 function playAudio() {
     audio.play();
+    albumCover.classList.add("spin")
     setInterval(refreshTime, 500)
 }
 
 function pauseAudio() {
     audio.pause();
+    albumCover.classList.remove("spin")
 }
 
 function togglePlay() {
@@ -81,7 +88,7 @@ let progressBar = document.querySelector('.audio_player__progress_bar')
 
 function refreshTime() {
     currentTime.innerHTML = `${Math.floor(audio.played.end(0)/60)}:${Math.floor(audio.played.end(0)%60)}`
-    progressBar.value = audio.played.end(0)
+    progressBar.value = audio.played.end(0) ? audio.played.end(0) : 0
 }
 
 let playButton = document.querySelector(".audio_player__play")
