@@ -45,6 +45,14 @@ main {
     margin: 0 0.5rem;
     border-radius: 0.5rem 0.5rem 0 0;
     border: 3px solid black;
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: transform 200ms, opacity 200ms;
+}
+
+.audio_player__track_controls.pause {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .audio_player__track_name {

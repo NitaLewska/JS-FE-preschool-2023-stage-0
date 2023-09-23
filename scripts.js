@@ -22,6 +22,7 @@ let albumCover = document.querySelector("img.audio_player__album_cover")
 let audio = document.querySelector(".audio_player__audio")
 let fullTime = document.querySelector('p.audio_player__full_time')
 let currentTime = document.querySelector('p.audio_player__current_time')
+let topPanel = document.querySelector('.audio_player__track_controls')
 
 function refreshPlayer() {
     trackName.innerHTML = tracks[currentTrack].trackName;
@@ -30,13 +31,16 @@ function refreshPlayer() {
     albumCover.src = tracks[currentTrack].cover
     audio.onloadedmetadata = function() {
         fullTime.innerHTML = `${Math.floor(audio.duration/60)}:${Math.floor(audio.duration%60)}`
+        progressBar.max = audio.duration
       };
 
 }
+
 refreshPlayer()
 
 function playAudio() {
     audio.play();
+    setInterval(refreshTime, 500)
 }
 
 function pauseAudio() {
@@ -45,13 +49,15 @@ function pauseAudio() {
 
 function togglePlay() {
     if (playing) {
-        audio.pause()
+        pauseAudio()
         playing = false
         playButton.classList.remove('pause')
+        topPanel.classList.remove('pause')
     } else {
-        audio.play()
+        playAudio()
         playing = true
         playButton.classList.add('pause')
+        topPanel.classList.add('pause')
     }
 }
 
@@ -59,7 +65,7 @@ function nextTrack() {
     currentTrack = currentTrack === (tracks.length - 1) ? 0 : currentTrack + 1
     refreshPlayer()
     if (playing) {
-        audio.play()
+        playAudio()
     }
 }
 
@@ -67,8 +73,15 @@ function previousTrack() {
     currentTrack = currentTrack === 0 ? tracks.length - 1 : currentTrack - 1
     refreshPlayer()
     if (playing) {
-        audio.play()
+        playAudio()
     }
+}
+
+let progressBar = document.querySelector('.audio_player__progress_bar')
+
+function refreshTime() {
+    currentTime.innerHTML = `${Math.floor(audio.played.end(0)/60)}:${Math.floor(audio.played.end(0)%60)}`
+    progressBar.value = audio.played.end(0)
 }
 
 let playButton = document.querySelector(".audio_player__play")
