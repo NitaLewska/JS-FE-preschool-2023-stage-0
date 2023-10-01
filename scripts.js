@@ -43,4 +43,5 @@ document.querySelector(".clearButton").addEventListener('click', function () {
 
 
 console.log("Вроде бы всё успела сделать, по критериям себя проверяла, 60")
+console.log("Дополнительно добавила сообщение о том, что таких фотографий нет, если длина массива response 0")
 
