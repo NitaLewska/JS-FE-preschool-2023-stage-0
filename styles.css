@@ -7,6 +7,7 @@
     padding: 0;
     margin: 0;
 }
+
 main {
     min-height: 100vh;
 }
@@ -24,15 +25,20 @@ header {
     gap: 1rem;
 }
 
+h2 {
+    text-align: center;
+    padding: 3rem;
+}
+
 .search {
     width: 30rem;
     max-width: calc(100vw - 2.5rem);
     position: relative;
     display: flex;
     height: 2.5rem;
-  }
+}
 
-  .keyword {
+.keyword {
     width: calc(100% - 2.5rem);
     border: 1px solid black;
     border-right: none;
@@ -41,13 +47,13 @@ header {
     border-radius: 0.4rem 0 0 0.4rem;
     outline: none;
     color: black;
-  }
+}
 
-  .keyword:focus{
+.keyword:focus {
     background-color: rgb(255, 246, 255);
-  }
+}
 
-  .submitButton {
+.submitButton {
     width: 2.5rem;
     height: 100%;
     border: 1px solid black;
@@ -57,7 +63,27 @@ header {
     border-radius: 0 0.4rem 0.4rem 0;
     cursor: pointer;
     font-size: 20px;
-  }
+}
+
+.clearButton {
+    position: absolute;
+    right: 3.25rem;
+    height: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.356);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.clearButton:hover {
+    color: black;
+}
+
+.hidden {
+    display: none;
+}
 
 .pics_container {
     display: flex;
@@ -89,7 +115,8 @@ footer img {
     height: 2rem;
 }
 
-footer a, footer p {
+footer a,
+footer p {
     text-decoration: none;
     color: black;
     font-weight: 600;
