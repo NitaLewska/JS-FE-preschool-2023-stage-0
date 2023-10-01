@@ -42,3 +42,5 @@ document.querySelector(".clearButton").addEventListener('click', function () {
 })
 
 
+console.log("Вроде бы всё успела сделать, по критериям себя проверяла, 60")
+
