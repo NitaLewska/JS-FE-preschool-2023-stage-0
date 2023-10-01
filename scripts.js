@@ -7,7 +7,6 @@ async function refreshPage() {
     }
     let responseJSON = await response.json();
     let imgs = responseJSON.results;
-    console.log(imgs)
     document.querySelector('.pics_container').innerHTML = ''
     if (imgs.length > 0) {
         imgs.map(function (a) {
